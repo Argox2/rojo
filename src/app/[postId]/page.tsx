@@ -3,7 +3,7 @@ import { getPostData, getSortedPostsData } from "@/app/utils/posts"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 
-export function generateMetada({ params }: { params: { postId: string }}) {
+function generateMetadata({ params }: { params: { postId: string }}) {
 
     const posts = getSortedPostsData()
     const { postId } = params
