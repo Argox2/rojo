@@ -1,32 +1,8 @@
 [
     {
-        "title": "Project 1",
-        "year": 2001,
-        "url": "/me",
-        "desc": "Description of project 1."
-    },
-    {
-        "title": "Project 2",
-        "year": 2022,
-        "url": "/me",
-        "desc": "Description of project 2."
-    },
-    {
-        "title": "Project 3",
-        "year": 2022,
-        "url": "#",
-        "desc": "Description of project 3."
-    },
-    {
-        "title": "Project 4",
-        "year": 2023,
-        "url": "#",
-        "desc": "Description of project 4."
-    },
-    {
-        "title": "Project 5",
+        "title": "Rojo-WebPage",
         "year": 2024,
-        "url": "#",
-        "desc": "Description of project 5."
-    }
+        "url": "https://github.com/Argox2/rojo",
+        "desc": "El codigo de esta página, hecho totalmente por mi."
+    },
 ]
