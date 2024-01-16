@@ -40,7 +40,7 @@ export default async function page({ params }: { params: { postId: string }}) {
             <p>{pubDate}</p>
             <article>
                 <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
-                <p><Link href="/blog">Back to home</Link></p>
+                <p><Link href="/blog">&larr; Back to posts</Link></p>
             </article>
         </main>
     )
