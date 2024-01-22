@@ -1,8 +1,27 @@
+    // {
+    //     "title": "",
+    //     "year": ,
+    //     "url": "",
+    //     "desc": ""
+    //},
+
 [
     {
-        "title": "Rojo-WebPage",
+        "title": "Habits Notion",
+        "year": 2024,
+        "url": "https://github.com/Argox2/habits-notion",
+        "desc": "Obtener la score de habitos de notion. "
+    },
+    {
+        "title": "Rojo WebPage",
         "year": 2024,
         "url": "https://github.com/Argox2/rojo",
         "desc": "El codigo de esta página, hecho totalmente por mi."
+    },
+    {
+        "title": "Game of Life",
+        "year": 2022,
+        "url": "https://github.com/Argox2/gameOfLife",
+        "desc": "A game where its evolution is determined by initial state."
     }
 ]
