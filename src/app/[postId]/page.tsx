@@ -3,45 +3,44 @@ import { getPostData, getSortedPostsData } from "@/app/utils/posts"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 
-function generateMetadata({ params }: { params: { postId: string }}) {
+export async function generateMetadata({ params }: { params: Promise<{ postId: string }> }) {
 
-    const posts = getSortedPostsData()
-    const { postId } = params
+  const { postId } = await params;
+  const posts = getSortedPostsData();
 
-    const post = posts.find(post => post.id === postId)
+  const post = posts.find(post => post.id === postId)
 
-    if (!post) {
-        return {
-            title: 'Post Not Found'
-        }
-    }
-
+  if (!post) {
     return {
-        title: post.title,
+      title: 'Post Not Found'
     }
+  }
+
+  return {
+    title: post.title,
+  }
 }
 
-export default async function page({ params }: { params: { postId: string }}) {
+export default async function page({ params }: { params: Promise<{ postId: string }> }) {
+  const { postId } = await params;
+  const posts = getSortedPostsData();
 
-    const posts = getSortedPostsData()
-    const { postId } = params
+  if (!posts.find(post => post.id === postId)) {
+    return notFound();
+  }
 
-    if (!posts.find(post => post.id === postId)) {
-        return notFound();
-    }
+  const { title, date, contentHtml } = await getPostData(postId)
 
-    const { title, date, contentHtml } = await getPostData(postId)
+  const pubDate = getFormattedDate(date)
 
-    const pubDate = getFormattedDate(date)
-
-    return (
-        <main>
-            <h2>{title}</h2>
-            <p>{pubDate}</p>
-            <article>
-                <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
-                <p><Link href="/blog">&larr; Back to posts</Link></p>
-            </article>
-        </main>
-    )
+  return (
+    <main>
+      <h2>{title}</h2>
+      <p>{pubDate}</p>
+      <article>
+        <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <p><Link href="/blog">&larr; Back to posts</Link></p>
+      </article>
+    </main>
+  )
 }

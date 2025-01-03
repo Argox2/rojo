@@ -1,7 +1,8 @@
 @font-face {
     font-family: 'SauceCodePro NF';
-    src: url('utils/fonts/SauceCodeProNF-Bold.woff2') format('woff2'),
-        url('utils/fonts/SauceCodeProNF-Bold.woff') format('woff');
+    src: url('/utils/fonts/SauceCodeProNF-Bold.woff2') format('woff2'),
+      url('/utils/fonts/SauceCodeProNF-Bold.woff') format('woff'),
+      url('/utils/fonts/SauceCodeProNerdFont-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -9,8 +10,9 @@
 
 @font-face {
     font-family: 'SauceCodePro NF';
-    src: url('utils/fonts/SauceCodeProNF.woff2') format('woff2'),
-        url('utils/fonts/SauceCodeProNF.woff') format('woff');
+    src: url('/utils/fonts/SauceCodeProNF.woff2') format('woff2'),
+        url('/utils/fonts/SauceCodeProNF.woff') format('woff'),
+        url('/utils/fonts/SauceCodeProNerdFont-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -19,24 +21,25 @@
 :root {
 }
 
-body {
+html, body, * {
+  font-family: 'SauceCodePro NF', monospace !important; 
+}
+
+html, body {
+  font-size: 18px;
+  color: white;
   max-width: 40em;
   margin: 0 auto;
   padding: 5px;
-  font-family: SauceCodePro NF, monospace;
-  font-size: 18px;
   line-height: 1.6em;
-  color: white;
   background-color: black;
 }
 
 h2, h3 {
-  font-family: sans-serif;
   font-weight: normal;
 }
 
 h1 {
-  font-family: sans-serif;
   font-weight: bold;
 }
 
